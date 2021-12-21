@@ -1,17 +1,16 @@
 import { useRouter } from 'next/router';
 import React, { useEffect } from 'react';
 
-interface Props {
-}
+interface Props {}
 
 const Index = (props: Props) => {
-  const router = useRouter();
+  // const router = useRouter();
 
-  useEffect(() => {
-    router.push('/login')
-  }, [router])
-  
-  return null;
+  // useEffect(() => {
+  //   router.push('/login')
+  // }, [router])
+
+  return <div />;
 };
 
 export default Index;
