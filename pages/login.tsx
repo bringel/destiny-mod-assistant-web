@@ -6,7 +6,7 @@ const Login = (props: Props) => {
   return (
     <div className="flex flex-col items-center">
       <h1 className="text-black text-4xl">Destiny Mod Assistant</h1>
-      <a href={`${process.env.API_URL}/login`} className="text-emerald-600 text-xl underline mt-2">
+      <a href={`${process.env.NEXT_PUBLIC_API_URL}/login`} className="text-emerald-600 text-xl underline mt-2">
         Login with Bungie
       </a>
       <div className="text-black text-lg mt-6">
