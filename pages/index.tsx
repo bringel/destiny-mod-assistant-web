@@ -1,14 +1,11 @@
-import { useRouter } from 'next/router';
 import React, { useEffect } from 'react';
+
+import { useAuthRedirect } from '../useAuthRedirect';
 
 interface Props {}
 
 const Index = (props: Props) => {
-  // const router = useRouter();
-
-  // useEffect(() => {
-  //   router.push('/login')
-  // }, [router])
+  useAuthRedirect();
 
   return <div />;
 };

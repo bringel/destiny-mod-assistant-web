@@ -10,6 +10,7 @@ type User = {
 
 interface UserContextType {
   currentUser: User | null;
+  isLoading: boolean;
 }
 
 export const UserContext = React.createContext<UserContextType | null>(null);
@@ -25,7 +26,9 @@ export const useUserContext = () => {
 };
 
 export const UserProvider = (props: { children: React.ReactNode }) => {
-  const { data } = useUserQuery();
+  const { data, isLoading } = useUserQuery();
 
-  return <UserContext.Provider value={{ currentUser: data }}>{props.children}</UserContext.Provider>;
+  return (
+    <UserContext.Provider value={{ currentUser: data, isLoading: isLoading }}>{props.children}</UserContext.Provider>
+  );
 };
