@@ -12,9 +12,10 @@ export const Navigation = (props: Props) => {
 
   return (
     <nav className="bg-indigo-800 flex h-14 shadow-black shadow-sm items-center px-4">
+      {/** TODO: replace h1 with a logo image */}
       <h1 className="text-white font-bold text-xl">Destiny Mod Assistant</h1>
       <div className="w-6" />
-      <ul className="text-white font-semibold text-lg flex">
+      <ul className="text-white font-normal text-lg flex">
         <li className="px-4">
           <Link href="/current-equipment">
             <a className={disable ? 'text-gray-400 pointer-events-none' : undefined}>Current Equipment</a>
