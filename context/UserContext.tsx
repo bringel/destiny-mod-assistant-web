@@ -9,7 +9,7 @@ type User = {
 };
 
 interface UserContextType {
-  currentUser: User | null;
+  currentUser: User | null | undefined;
   isLoading: boolean;
 }
 
