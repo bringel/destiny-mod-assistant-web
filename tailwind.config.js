@@ -7,6 +7,9 @@ module.exports = {
       fontFamily: {
         sans: ['Fira Sans', ...defaultTheme.fontFamily.sans],
         mono: ['Fira Mono', ...defaultTheme.fontFamily.mono]
+      },
+      colors: {
+        lightLevel: '#DDCB59'
       }
     }
   },

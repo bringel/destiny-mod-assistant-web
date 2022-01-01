@@ -11,7 +11,12 @@ const Index = (props: Props) => {
 
   const { data, isLoading } = useCharactersQuery();
 
-  return <div>{isLoading ? 'Loading...' : <CharactersList characters={data} />}</div>;
+  return (
+    <div className="flex flex-col gap-y-3 ml-20">
+      <span className="text-lg">Select a character to view their currently equipped armor and mods</span>
+      <div>{!isLoading && data !== undefined ? <CharactersList characters={data} /> : 'Loading...'}</div>
+    </div>
+  );
 };
 
 export default Index;
