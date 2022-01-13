@@ -23,12 +23,12 @@ export const Navigation = (props: Props) => {
         </li>
 
         <li className="px-4">
-          <Link href="builds">
+          <Link href="/builds">
             <a className={disable ? 'text-gray-400 pointer-events-none' : undefined}>Builds</a>
           </Link>
         </li>
         <li className="px-4">
-          <Link href="mods">
+          <Link href="/mods">
             <a className={disable ? 'text-gray-400 pointer-events-none' : undefined}>Armor Mods</a>
           </Link>
         </li>

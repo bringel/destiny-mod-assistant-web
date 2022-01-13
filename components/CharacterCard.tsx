@@ -10,10 +10,11 @@ interface Props {
 export const CharacterCard = (props: Props) => {
   return (
     <div className="relative">
-      <img src={`https://bungie.net${props.character.emblemBackgroundPath}`} alt="" height={96} width={474} />
+      <img src={props.character.emblemBackgroundPath} alt="" height={96} width={474} />
       <div className="absolute left-24 top-2 text-white text-xl flex flex-col">
         <div>
-          {props.character.class} &mdash; <span className="text-lg">{props.character.genderAndRaceDescription}</span>
+          {props.character.characterClass} &mdash;{' '}
+          <span className="text-lg">{props.character.genderAndRaceDescription}</span>
         </div>
         <div className="text-lightLevel">{props.character.light}</div>
       </div>

@@ -1,5 +1,6 @@
+import { compareDesc, parseISO } from 'date-fns';
 import Link from 'next/link';
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import { CharacterCard } from '../components/CharacterCard';
 import { useCharactersQuery } from '../data-fetching/useCharactersQuery';
@@ -11,6 +12,10 @@ const Index = (props: Props) => {
   useAuthRedirect();
 
   const { data, isLoading } = useCharactersQuery();
+
+  data?.sort((a, b) => {
+    return compareDesc(parseISO(a.dateLastPlayed), parseISO(b.dateLastPlayed));
+  });
 
   return (
     <div className="flex gap-x-3 ml-20">

@@ -6,9 +6,26 @@ export type User = {
 
 export type Character = {
   characterID: string;
-  class: string;
+  characterClass: string;
   genderAndRaceDescription: string;
   dateLastPlayed: string;
   light: number;
   emblemBackgroundPath: string;
+};
+
+export enum ArmorType {
+  Helmet = 1,
+  Arms,
+  Chest,
+  Legs,
+  ClassItem
+}
+
+export type ArmorPiece = {
+  itemHash: number;
+  itemInstanceID: number;
+  itemType: ArmorType;
+  bucketHash: number;
+  name: string;
+  iconPath: string;
 };
