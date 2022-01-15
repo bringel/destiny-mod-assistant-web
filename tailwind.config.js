@@ -9,7 +9,11 @@ module.exports = {
         mono: ['Fira Mono', ...defaultTheme.fontFamily.mono]
       },
       colors: {
-        lightLevel: '#DDCB59'
+        'light-level': '#DDCB59',
+        'energy-stasis': '#4D88FF',
+        'energy-void': '#B185DF',
+        'energy-solar': '#F0631E',
+        'energy-arc': '#5ac0cb' //'#7AECF3'
       }
     }
   },

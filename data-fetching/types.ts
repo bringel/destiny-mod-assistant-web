@@ -21,6 +21,13 @@ export enum ArmorType {
   ClassItem
 }
 
+export enum EnergyType {
+  Arc = 1,
+  Solar = 2,
+  Void = 3,
+  Stasis = 6
+}
+
 export type ArmorPiece = {
   itemHash: number;
   itemInstanceID: number;
@@ -28,4 +35,7 @@ export type ArmorPiece = {
   bucketHash: number;
   name: string;
   iconPath: string;
+  energyType: EnergyType;
+  energyCapacity: number;
+  energyUsed: number;
 };
