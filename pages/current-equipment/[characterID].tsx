@@ -25,7 +25,7 @@ const CharacterCurrentEquipment = (props: Props) => {
       <CharacterCard character={data?.character} />
       <div className="space-y-2 divide-y divide-gray-400">
         {data.armor.map((a) => (
-          <ArmorRow armor={a} />
+          <ArmorRow key={a.itemInstanceID} armor={a} />
         ))}
       </div>
     </div>
