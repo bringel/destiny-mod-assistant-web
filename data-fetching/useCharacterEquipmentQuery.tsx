@@ -1,5 +1,6 @@
 import { useQuery } from 'react-query';
 
+import spot from './spot';
 import { ArmorPiece, Character } from './types';
 
 export const useCharacterEquipmentQuery = (characterID: string | undefined) => {
@@ -8,12 +9,6 @@ export const useCharacterEquipmentQuery = (characterID: string | undefined) => {
       throw new Error('No character ID provided to useCharacterEquipmentQuery');
     }
 
-    let res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/characters/${characterID}`, { credentials: 'include' });
-
-    if (!res.ok) {
-      throw new Error('Network error');
-    } else {
-      return res.json();
-    }
+    return await spot.get(`/characters/${characterID}`);
   });
 };

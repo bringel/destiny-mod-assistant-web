@@ -38,4 +38,10 @@ export type ArmorPiece = {
   energyType: EnergyType;
   energyCapacity: number;
   energyUsed: number;
+  sockets: Array<{
+    socketItemTypeHash: string;
+    displayName: string;
+    iconPath: string;
+    plugSetHash: string;
+  }>;
 };
