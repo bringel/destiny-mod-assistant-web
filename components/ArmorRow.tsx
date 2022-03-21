@@ -17,8 +17,8 @@ export const ArmorRow = (props: Props) => {
   return (
     <div className="px-3 py-1 ">
       <div>{props.armor.name}</div>
-      <div className="grid grid-cols-6 items-center auto-rows-max">
-        <div className="flex items-center">
+      <div className="grid grid-cols-6 items-start auto-rows-max">
+        <div className="flex items-center col-start-1 row-start-1">
           <img
             src={props.armor.iconPath}
             className={clsx('h-[72px]', 'w-[72px]', 'border-2', {
@@ -48,12 +48,21 @@ export const ArmorRow = (props: Props) => {
             {props.armor.energyCapacity}
           </span>
         </div>
-        {props.armor.sockets.map((socket, index) => {
+        <div className="col-start-1 row-start-2 row-span-2" />
+        {props.armor.modSlots.map((socket, index) => {
           return (
-            <div className="">
-              <img src={socket.iconPath} className="bg-gray-900 h-[72px] w-[72px]" />
-              <span className="text-sm text-gray-700">{socket.displayName}</span>
-            </div>
+            <React.Fragment key={index}>
+              <img
+                src={socket.currentPlug !== null ? socket.currentPlug.iconPath : socket.iconPath}
+                className="bg-gray-900 h-[72px] w-[72px] row-start-1"
+                alt=""
+              />
+
+              <span className="text-sm text-gray-700 row-start-2">
+                {socket.currentPlug !== null ? socket.currentPlug.displayName : 'Empty'}
+              </span>
+              <span className="text-xs text-gray-500 row-start-3">{socket.displayName}</span>
+            </React.Fragment>
           );
         })}
       </div>

@@ -28,6 +28,12 @@ export enum EnergyType {
   Stasis = 6
 }
 
+export type CurrentSocketPlug = {
+  plugHash: string;
+  displayName: string;
+  iconPath: string;
+};
+
 export type ArmorPiece = {
   itemHash: number;
   itemInstanceID: number;
@@ -38,10 +44,11 @@ export type ArmorPiece = {
   energyType: EnergyType;
   energyCapacity: number;
   energyUsed: number;
-  sockets: Array<{
+  modSlots: Array<{
     socketItemTypeHash: string;
     displayName: string;
     iconPath: string;
     plugSetHash: string;
+    currentPlug: CurrentSocketPlug | null;
   }>;
 };
